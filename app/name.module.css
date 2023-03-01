@@ -1,0 +1,7 @@
+.name {
+    cursor: pointer;
+}
+
+.selectBlocked {
+    user-select: none;
+}

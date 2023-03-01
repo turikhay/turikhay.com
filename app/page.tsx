@@ -1,91 +1,103 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import { Inter } from "next/font/google";
+import Name from "./name";
+import Canvas from "./canvas";
+import styles from "./page.module.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Inter({ subsets: ["latin", "cyrillic"] });
+
+export const metadata = {
+  title: "Artur Khusainov (@turikhay)",
+  description: "full stack developer, 25 years old",
+};
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
+    <main className={`${font.className} ${styles.main}`}>
+      <div className={styles.me}>
+        <Name />
+        <div>full stack developer, 25 years old</div>
+      </div>
+      <div className={styles.canvas}>
+        <Canvas />
+      </div>
+      <div className={`${styles.section} ${styles.contact}`}>
+        <h2>Contact details</h2>
+        <ul>
+          <li className={styles.sectionElem}>
+            <a href="https://t.me/turikhay">Telegram</a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a
+              href="https://discordapp.com/users/132131558067798016"
+              target="_blank"
+            >
+              Discord
+            </a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a href="mailto:me@turikhay.com">Email</a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a href="https://github.com/turikhay">GitHub</a>
+          </li>
+        </ul>
+      </div>
+      <div className={`${styles.section} ${styles.links}`}>
+        <h2>Notable links</h2>
+        <ul>
+          <li className={styles.sectionElem}>
+            <a href="https://t.me/s/ya_smotryu_tiktok">Я смотрю TikTok</a>
+          </li>
+        </ul>
+      </div>
+      <div className={`${styles.section} ${styles.socialmedia}`}>
+        <h2>Social media</h2>
+        <ul>
+          <li className={styles.sectionElem}>
+            <a href="https://twitch.tv/turikhay">Twitch</a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a href="https://twitter.com/turikhay">Twitter</a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a rel="me" href="https://social.vivaldi.net/@turikhay">
+              Mastodon
+            </a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a href="https://instagram.com/turikhay">Instagram</a>
+          </li>
+          <li className={styles.sectionElem}>
+            <a href="https://www.tiktok.com/@turikhay">TikTok</a>
+          </li>
+        </ul>
+      </div>
+      <div className={`${styles.section} ${styles.attributions}`}>
+        <h2>Attributions</h2>
+        <div className={styles.sectionElem}>
+          Do you recognize the cat? His name is Maxwell (actually, Jess).{" "}
           <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+            href="https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0"
             target="_blank"
-            rel="noopener noreferrer"
           >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+            The model
+          </a>{" "}
+          is made by{" "}
+          <a href="https://sketchfab.com/alwayshasbean" target="_blank">
+            bean (alwayshasbean)
+          </a>{" "}
+          and is licensed under{" "}
+          <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
+            Creative Commons Attribution
           </a>
+          . The website in turn is licensed under GPLv3 and the source code is
+          available at{" "}
+          <a href="https://github.com/turikhay/turikhay.com" target="_blank">
+            my GitHub
+          </a>
+          .
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
-  )
+  );
 }
