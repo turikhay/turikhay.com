@@ -81,30 +81,35 @@ export default function Home() {
         </ul>
       </div>
       <div className={`${styles.section} ${styles.attributions}`}>
-        <h2>Attributions</h2>
-        <div className={styles.sectionElem}>
-          Do you recognize the cat? His name is Maxwell (actually, Jess).{" "}
-          <a
-            href="https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0"
-            target="_blank"
-          >
-            The model
-          </a>{" "}
-          is made by{" "}
-          <a href="https://sketchfab.com/alwayshasbean" target="_blank">
-            bean (alwayshasbean)
-          </a>{" "}
-          and is licensed under{" "}
-          <a href="http://creativecommons.org/licenses/by/4.0/" target="_blank">
-            Creative Commons Attribution
-          </a>
-          . The website in turn is licensed under GPLv3 and the source code is
-          available at{" "}
-          <a href="https://github.com/turikhay/turikhay.com" target="_blank">
-            my GitHub
-          </a>
-          .
-        </div>
+        <noindex>
+          <h2>Attributions</h2>
+          <div className={styles.sectionElem}>
+            Do you recognize the cat? His name is Maxwell (actually, Jess).{" "}
+            <a
+              href="https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0"
+              target="_blank"
+            >
+              The model
+            </a>{" "}
+            is made by{" "}
+            <a href="https://sketchfab.com/alwayshasbean" target="_blank">
+              bean (alwayshasbean)
+            </a>{" "}
+            and is licensed under{" "}
+            <a
+              href="http://creativecommons.org/licenses/by/4.0/"
+              target="_blank"
+            >
+              Creative Commons Attribution
+            </a>
+            . The website in turn is licensed under GPLv3 and the source code is
+            available at{" "}
+            <a href="https://github.com/turikhay/turikhay.com" target="_blank">
+              my GitHub
+            </a>
+            .
+          </div>
+        </noindex>
       </div>
     </main>
   );
