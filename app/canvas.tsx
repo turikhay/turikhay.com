@@ -14,7 +14,7 @@ export default function CanvasWrapper() {
 
   return (
     <Canvas camera={{ position: initialVector() }}>
-      <ambientLight color={"white"} intensity={2.4} />
+      <ambientLight color={"white"} intensity={1.4} />
       <primitive object={gltf.scene} position={new Vector3(0, -8, 0)} />
       <CameraOrbit />
       <CameraZoom />
