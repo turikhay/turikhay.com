@@ -1,7 +1,9 @@
+import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import Name from "./name";
-import Canvas from "./canvas";
 import styles from "./page.module.css";
+
+const Canvas = dynamic(() => import("./canvas"), { ssr: false });
 
 const font = Inter({ subsets: ["latin", "cyrillic"] });
 
