@@ -1,5 +1,6 @@
 :root {
-  --main-width: 30rem;
+  --body-max-width: 1200px;
+  --main-width: 32rem;
   --hor-padding: 3rem;
 }
 
@@ -11,7 +12,8 @@
 
 html,
 body {
-  padding: 1rem 3rem;
+  max-width: var(--body-max-width);
+  margin: 0 auto;
 }
 
 a {

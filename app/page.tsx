@@ -1,9 +1,13 @@
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+import Loading from "./loading";
 import Name from "./name";
 import styles from "./page.module.css";
 
-const Canvas = dynamic(() => import("./canvas"), { ssr: false });
+const Canvas = dynamic(() => import("./canvas"), {
+  ssr: false,
+  loading: () => <Loading />,
+});
 
 const font = Inter({ subsets: ["latin", "cyrillic"] });
 
@@ -19,8 +23,10 @@ export default function Home() {
         <Name />
         <div>full stack developer, 25 years old</div>
       </div>
-      <div className={styles.canvas}>
-        <Canvas />
+      <div className={styles.canvasWrapper}>
+        <div className={styles.canvasContent}>
+          <Canvas />
+        </div>
       </div>
       <div className={`${styles.section} ${styles.contact}`}>
         <h2>Contact details</h2>
