@@ -79,6 +79,7 @@ export default function Home() {
               icon={TwitterIcon}
             />
             <Li
+              me
               text="Mastodon"
               url="https://social.vivaldi.net/@turikhay"
               icon={MastodonIcon}
@@ -143,14 +144,16 @@ function Li({
   text,
   url,
   icon,
+  me,
 }: {
   text: string;
   url: string;
   icon: IconFactory;
+  me?: true;
 }) {
   return (
     <li className={`${styles.element} ${styles.logo}`}>
-      <a href={url} target="_blank">
+      <a href={url} rel={me ? "me" : undefined} target="_blank">
         <Logo icon={icon} /> <span className={styles.text}>{text}</span>
       </a>
     </li>
