@@ -34,8 +34,19 @@
   max-height: 512px;
 }
 
-.section > * > .element {
-  padding: 0.3rem 0;
+.element {
+  padding: 0.5rem 0;
+}
+
+.element.logo > a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.element.logo > a > .text {
+  text-decoration: underline;
 }
 
 .section.attributions {

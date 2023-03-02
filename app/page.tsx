@@ -1,5 +1,17 @@
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+import {
+  DiscordIcon,
+  EmailIcon,
+  GitHubIcon,
+  InstagramIcon,
+  MastodonIcon,
+  SVGProps,
+  TelegramIcon,
+  TikTokIcon,
+  TwitchIcon,
+  TwitterIcon,
+} from "./icons";
 import Loading from "./loading";
 import Me from "./me";
 import styles from "./page.module.css";
@@ -27,23 +39,22 @@ export default function Home() {
         <div className={`${styles.section}`}>
           <h2>Contact details</h2>
           <ul>
-            <li className={styles.element}>
-              <a href="https://t.me/turikhay">Telegram</a>
-            </li>
-            <li className={styles.element}>
-              <a
-                href="https://discordapp.com/users/132131558067798016"
-                target="_blank"
-              >
-                Discord
-              </a>
-            </li>
-            <li className={styles.element}>
-              <a href="mailto:me@turikhay.com">Email</a>
-            </li>
-            <li className={styles.element}>
-              <a href="https://github.com/turikhay">GitHub</a>
-            </li>
+            <Li
+              text="Telegram"
+              url="https://t.me/turikhay"
+              icon={TelegramIcon}
+            />
+            <Li
+              text="Discord"
+              url="https://discordapp.com/users/132131558067798016"
+              icon={DiscordIcon}
+            />
+            <Li text="Email" url="mailto:me@turikhay.com" icon={EmailIcon} />
+            <Li
+              text="GitHub"
+              url="https://github.com/turikhay"
+              icon={GitHubIcon}
+            />
           </ul>
         </div>
         <div className={`${styles.section}`}>
@@ -57,23 +68,31 @@ export default function Home() {
         <div className={`${styles.section}`}>
           <h2>Social media</h2>
           <ul>
-            <li className={styles.element}>
-              <a href="https://twitch.tv/turikhay">Twitch</a>
-            </li>
-            <li className={styles.element}>
-              <a href="https://twitter.com/turikhay">Twitter</a>
-            </li>
-            <li className={styles.element}>
-              <a rel="me" href="https://social.vivaldi.net/@turikhay">
-                Mastodon
-              </a>
-            </li>
-            <li className={styles.element}>
-              <a href="https://instagram.com/turikhay">Instagram</a>
-            </li>
-            <li className={styles.element}>
-              <a href="https://www.tiktok.com/@turikhay">TikTok</a>
-            </li>
+            <Li
+              text="Twitch"
+              url="https://twitch.tv/turikhay"
+              icon={TwitchIcon}
+            />
+            <Li
+              text="Twitter"
+              url="https://twitter.com/turikhay"
+              icon={TwitterIcon}
+            />
+            <Li
+              text="Mastodon"
+              url="https://social.vivaldi.net/@turikhay"
+              icon={MastodonIcon}
+            />
+            <Li
+              text="Instagram"
+              url="https://instagram.com/turikhay"
+              icon={InstagramIcon}
+            />
+            <Li
+              text="TikTok"
+              url="https://www.tiktok.com/@turikhay"
+              icon={TikTokIcon}
+            />
           </ul>
         </div>
         <div className={`${styles.section} ${styles.attributions}`}>
@@ -116,4 +135,32 @@ export default function Home() {
       </div>
     </main>
   );
+}
+
+type IconFactory = (props: SVGProps) => JSX.Element;
+
+function Li({
+  text,
+  url,
+  icon,
+}: {
+  text: string;
+  url: string;
+  icon: IconFactory;
+}) {
+  return (
+    <li className={`${styles.element} ${styles.logo}`}>
+      <a href={url} target="_blank">
+        <Logo icon={icon} /> <span className={styles.text}>{text}</span>
+      </a>
+    </li>
+  );
+}
+
+function Logo({ icon }: { icon: IconFactory }) {
+  return icon({
+    width: "1rem",
+    height: "1rem",
+    className: styles.logo,
+  });
 }
