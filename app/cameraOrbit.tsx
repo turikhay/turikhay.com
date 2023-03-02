@@ -1,6 +1,8 @@
 import { extend, Object3DNode, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
+import { Vector3 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import { cameraPos } from "./canvas";
 
 extend({ OrbitControls });
 
@@ -31,6 +33,8 @@ export default function CameraOrbit() {
     ref.current?.update();
   });
 
+  const polarAngle = cameraPos.angleTo(new Vector3(0, 1, 0));
+
   return (
     <orbitControls
       ref={ref}
@@ -38,8 +42,10 @@ export default function CameraOrbit() {
       args={[camera, gl.domElement]}
       autoRotate={true}
       enableDamping={true}
-      minDistance={20}
-      maxDistance={80}
+      enableZoom={false}
+      enablePan={false}
+      minPolarAngle={polarAngle}
+      maxPolarAngle={polarAngle}
       autoRotateSpeed={-3}
     />
   );
