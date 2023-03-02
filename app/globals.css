@@ -1,6 +1,9 @@
 :root {
+  --foreground: #222;
+  --background: white;
+
   --body-max-width: 1200px;
-  --main-width: 32rem;
+  --column-width: 32rem;
   --hor-padding: 3rem;
 }
 
@@ -12,8 +15,12 @@
 
 html,
 body {
+  color: var(--foreground);
+  background: var(--background);
+
   max-width: var(--body-max-width);
   margin: 0 auto;
+  display: flex;
 }
 
 a {
@@ -24,13 +31,16 @@ ul {
   list-style-type: none;
 }
 
-@media (max-width: 700px) {
-  html, body {
-    padding: 1rem 1rem;
-  }
-}
-
 @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground: #eee;
+    --background: #111;
+
+    --body-max-width: 1200px;
+    --column-width: 32rem;
+    --hor-padding: 3rem;
+  }
+
   html {
     color-scheme: dark;
   }
