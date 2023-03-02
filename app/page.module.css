@@ -60,7 +60,7 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
   .main {
     flex-direction: column;
     gap: 1rem;
