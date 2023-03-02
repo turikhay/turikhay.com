@@ -89,3 +89,9 @@
     aspect-ratio: 1 / 1 !important;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  .column.canvas {
+    background: radial-gradient(#fff1 0%, #fff0 65%);
+  }
+}
