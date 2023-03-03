@@ -1,10 +1,13 @@
 .main {
+  --padding-x: 5rem;
+  --padding-y: 2rem;
+
   display: flex;
   flex-direction: row;
-  gap: 5rem;
+  gap: 2rem;
   align-items: center;
   min-height: 100vh;
-  padding: 2rem 5rem;
+  padding: var(--padding-y) 0;
 }
 
 .column {
@@ -25,13 +28,27 @@
 .column.canvas {
   justify-content: center;
   align-items: center;
+  align-self: flex-start;
 
   cursor: grab;
 
+  height: 100%;
+  max-height: calc(100vh - 2 * var(--padding-y));
+}
+
+.column.canvas,
+.canvasWrapper {
   width: 30vw;
-  max-width: 512px;
+  max-width: var(--column-width);
+}
+
+.canvasWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   height: 30vw;
-  max-height: 512px;
+  max-height: var(--column-width);
 }
 
 .element {
@@ -61,13 +78,6 @@
   padding-bottom: 1rem;
 }
 
-@media (max-width: 1100px) {
-  .column.canvas {
-    width: 20vw;
-    height: 20vw;
-  }
-}
-
 @media (max-width: 950px) {
   .main {
     flex-direction: column;
@@ -82,10 +92,17 @@
     order: 1;
   }
 
-  .column.canvas {
+  .column.canvas,
+  .canvasWrapper {
     width: 100%;
-    height: auto;
     aspect-ratio: 3 / 2 !important;
+
+    /* fix threejs making canvas bigger than the screen */
+    max-width: calc(100vw - 2 * var(--padding-x));
+  }
+
+  .canvasWrapper {
+    height: auto;
   }
 
   .column.content > .me {
@@ -95,7 +112,8 @@
 
 @media (max-width: 700px) {
   .main {
-    padding: 2rem;
+    --padding-x: 2rem;
+    --padding-y: 2rem;
   }
 
   .column {
@@ -104,13 +122,13 @@
 }
 
 @media (max-width: 400px) {
-  .column.canvas {
+  .canvasWrapper {
     aspect-ratio: 1 / 1 !important;
   }
 }
 
 @media (prefers-color-scheme: dark) {
-  .column.canvas {
+  .canvasWrapper {
     background: radial-gradient(#fff1 0%, #fff0 65%);
   }
 }

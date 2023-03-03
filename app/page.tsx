@@ -133,7 +133,9 @@ export default function Home() {
         </div>
       </div>
       <div className={`${styles.column} ${styles.canvas}`}>
-        <Canvas />
+        <div className={`${styles.canvasWrapper}`}>
+          <Canvas />
+        </div>
       </div>
     </main>
   );
