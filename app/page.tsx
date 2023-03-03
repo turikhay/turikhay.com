@@ -1,5 +1,6 @@
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
+import { AGE } from "./components/age";
 import {
   DiscordIcon,
   EmailIcon,
@@ -11,12 +12,12 @@ import {
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
-} from "./icons";
-import Loading from "./loading";
-import Me from "./me";
+} from "./components/icons";
+import Loading from "./components/loading";
+import Me from "./components/me";
 import styles from "./page.module.css";
 
-const Canvas = dynamic(() => import("./canvas"), {
+const Canvas = dynamic(() => import("./components/canvas"), {
   ssr: false,
   loading: () => <Loading />,
 });
@@ -25,7 +26,7 @@ const font = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata = {
   title: "Artur Khusainov (@turikhay)",
-  description: "full stack developer, 25 years old",
+  description: `Full stack developer, ${AGE} years old`,
 };
 
 export default function Home() {

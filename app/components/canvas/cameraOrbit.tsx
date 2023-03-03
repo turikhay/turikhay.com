@@ -2,7 +2,7 @@ import { extend, Object3DNode, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { cameraPos } from "./canvas";
+import { cameraPos } from ".";
 
 extend({ OrbitControls });
 
