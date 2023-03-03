@@ -26,7 +26,7 @@ const font = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata = {
   title: "Artur Khusainov (@turikhay)",
-  description: `Full stack developer, ${AGE} years old`,
+  description: `Full stack developer, ${AGE} years old. Personal home page of Artur Khusainov (@turikhay)`,
 };
 
 export default function Home() {
@@ -61,7 +61,7 @@ export default function Home() {
         <div className={`${styles.section}`}>
           <h2>Notable links</h2>
           <ul>
-            <li className={styles.element}>
+            <li className={`${styles.element} ${styles.flex}`}>
               <a href="https://t.me/s/ya_smotryu_tiktok">Я смотрю TikTok</a>
             </li>
           </ul>
@@ -153,18 +153,18 @@ function Li({
   me?: true;
 }) {
   return (
-    <li className={`${styles.element} ${styles.logo}`}>
+    <li className={`${styles.element} ${styles.flex} ${styles.logo}`}>
       <a href={url} rel={me ? "me" : undefined} target="_blank">
-        <Logo icon={icon} /> <span className={styles.text}>{text}</span>
+        {icon({
+          width: "1.5rem",
+          height: "1.5rem",
+          className: styles.logo,
+          style: {
+            margin: "0 1rem",
+          },
+        })}{" "}
+        <span className={styles.text}>{text}</span>
       </a>
     </li>
   );
-}
-
-function Logo({ icon }: { icon: IconFactory }) {
-  return icon({
-    width: "1rem",
-    height: "1rem",
-    className: styles.logo,
-  });
 }

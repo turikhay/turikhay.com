@@ -35,14 +35,18 @@
 }
 
 .element {
+  padding: 0.1rem 0;
+}
+
+.element.flex > a {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 0;
 }
 
 .element.logo > a {
   text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 .element.logo > a > .text {
@@ -51,6 +55,10 @@
 
 .section.attributions {
   font-size: 0.8rem;
+}
+
+.section > h2 {
+  padding-bottom: 1rem;
 }
 
 @media (max-width: 1100px) {
