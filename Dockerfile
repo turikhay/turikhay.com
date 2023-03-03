@@ -4,11 +4,11 @@ ENV NPM_CONFIG_LOGLEVEL error
 
 RUN npm install -g pnpm
 
-COPY pnpm-lock.yaml ./
-
-COPY . .
+COPY package.json pnpm-lock.yaml ./
 
 RUN pnpm install --frozen-lockfile
+
+COPY . .
 
 RUN pnpm build
 
