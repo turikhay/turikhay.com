@@ -61,9 +61,7 @@ export default function Home() {
         <div className={`${styles.section}`}>
           <h2>Notable links</h2>
           <ul>
-            <li className={`${styles.element} ${styles.flex}`}>
-              <a href="https://t.me/s/ya_smotryu_tiktok">Я смотрю TikTok</a>
-            </li>
+            <Li text="Я смотрю TikTok" url="https://t.me/s/ya_smotryu_tiktok" />
           </ul>
         </div>
         <div className={`${styles.section}`}>
@@ -151,18 +149,28 @@ function Li({
 }: {
   text: string;
   url: string;
-  icon: IconFactory;
+  icon?: IconFactory;
   me?: true;
 }) {
   return (
-    <li className={`${styles.element} ${styles.flex} ${styles.logo}`}>
+    <li
+      className={`${styles.element} ${styles.flex} ${icon ? styles.logo : ""}`}
+    >
       <a href={url} rel={me ? "me" : undefined} target="_blank">
-        {icon({
-          width: "1.5rem",
-          height: "1.5rem",
-          className: styles.logo,
-        })}{" "}
-        <span className={styles.text}>{text}</span>
+        <>
+          {icon ? (
+            <>
+              {icon({
+                width: "1.5rem",
+                height: "1.5rem",
+                className: styles.logo,
+              })}{" "}
+            </>
+          ) : (
+            <></>
+          )}
+          <span className={styles.text}>{text}</span>
+        </>
       </a>
     </li>
   );
