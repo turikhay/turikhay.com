@@ -161,9 +161,6 @@ function Li({
           width: "1.5rem",
           height: "1.5rem",
           className: styles.logo,
-          style: {
-            margin: "0 1rem",
-          },
         })}{" "}
         <span className={styles.text}>{text}</span>
       </a>

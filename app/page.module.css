@@ -56,10 +56,10 @@
 }
 
 .element.flex > a {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.5rem 0;
+  padding: 0.5rem 1.5rem;
 }
 
 .element.logo > a {
