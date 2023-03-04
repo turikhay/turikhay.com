@@ -47,7 +47,7 @@ export default function Home() {
             />
             <Li
               text="Discord"
-              url="https://discordapp.com/users/132131558067798016"
+              url="https://discord.com/users/132131558067798016"
               icon={DiscordIcon}
             />
             <Li text="Email" url="mailto:me@turikhay.com" icon={EmailIcon} />
