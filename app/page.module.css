@@ -114,6 +114,7 @@
   .main {
     --padding-x: 2rem;
     --padding-y: 2rem;
+    padding: var(--padding-y) var(--padding-x);
   }
 
   .column {
