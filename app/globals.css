@@ -35,10 +35,6 @@ ul {
   :root {
     --foreground: #eee;
     --background: #111;
-
-    --body-max-width: 1200px;
-    --column-width: 32rem;
-    --hor-padding: 3rem;
   }
 
   html {
