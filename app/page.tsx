@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
-import { AGE } from "./components/age";
+import { AGE } from "./components/me/age";
 import {
   DiscordIcon,
   EmailIcon,

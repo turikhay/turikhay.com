@@ -38,7 +38,7 @@ export default function Name() {
         }}
         title={`My name in ${variant["lang"]}`}
       >
-        {variant.name} (@turikhay)
+        {variant.name}
       </h1>
     </>
   );
