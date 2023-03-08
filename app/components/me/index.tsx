@@ -2,7 +2,7 @@ import { HTMLProps } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import styles from "./me.module.css";
+import styles from "./index.module.css";
 import { AGE } from "./age";
 import Name from "./name";
 
