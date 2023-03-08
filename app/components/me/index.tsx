@@ -7,20 +7,21 @@ import { AGE } from "./age";
 import Name from "./name";
 
 import yuki from "./yuki.png";
-import yukiCircle from "./yuki_circle.png";
 
 const yukiDescription = "Yuki (my profile picture)";
+const imageSize = 64;
 
 export default function Me(props: HTMLProps<HTMLDivElement>) {
   return (
     <div {...props} className={`${props.className ?? ""} ${styles.me}`}>
       <Link href={yuki.src} target="_blank" title={yukiDescription}>
         <Image
-          src={yukiCircle}
-          width={64}
-          height={64}
+          src={yuki}
+          width={imageSize}
+          height={imageSize}
           className={`${styles.pfp}`}
           alt={yukiDescription}
+          style={{ borderRadius: `${Math.round(imageSize / 2)}px` }}
         />
       </Link>
       <div className={`${styles.text}`}>
