@@ -2,7 +2,6 @@ import { extend, Object3DNode, useFrame, useThree } from "@react-three/fiber";
 import { useEffect, useRef } from "react";
 import { Vector3 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import { cameraPos } from ".";
 
 extend({ OrbitControls });
 
@@ -12,7 +11,7 @@ declare module "@react-three/fiber" {
   }
 }
 
-export default function CameraOrbit() {
+export default function CameraOrbit({ position }: { position: Vector3 }) {
   const { camera, gl } = useThree();
   const ref = useRef<OrbitControls>(null);
 
@@ -33,7 +32,7 @@ export default function CameraOrbit() {
     ref.current?.update();
   });
 
-  const polarAngle = cameraPos.angleTo(new Vector3(0, 1, 0));
+  const polarAngle = position.angleTo(new Vector3(0, 1, 0));
 
   return (
     <orbitControls
