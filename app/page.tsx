@@ -12,6 +12,7 @@ import {
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
+  YouTubeIcon,
 } from "./components/icons";
 import Loading from "./components/loading";
 import Me from "./components/me";
@@ -92,6 +93,11 @@ export default function Home() {
               text="TikTok"
               url="https://www.tiktok.com/@turikhay"
               icon={TikTokIcon}
+            />
+            <Li
+              text="YouTube"
+              url="https://youtube.com/@turikhay"
+              icon={YouTubeIcon}
             />
           </ul>
         </div>
