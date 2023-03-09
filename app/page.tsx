@@ -80,7 +80,7 @@ export default function Home() {
             <Li
               me
               text="Mastodon"
-              url="https://social.vivaldi.net/@turikhay"
+              url="https://mas.to/@turikhay"
               icon={MastodonIcon}
             />
             <Li
