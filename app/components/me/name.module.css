@@ -1,7 +1,17 @@
 .name {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .selectBlocked {
-    user-select: none;
+  user-select: none;
+}
+
+.flag,
+.flag > svg {
+  height: 0.8em;
+}
+
+.flag {
+  display: inline-flex;
+  margin: 0 0.5rem;
 }
