@@ -7,16 +7,16 @@ import {
   GitHubIcon,
   InstagramIcon,
   MastodonIcon,
-  SVGProps,
   TelegramIcon,
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
   YouTubeIcon,
-} from "./components/icons";
+} from "./components/icons/fontawesome";
 import Loading from "./components/loading";
 import Me from "./components/me";
 import styles from "./page.module.css";
+import { SVGElementProps } from "./components/icons/common";
 
 const Canvas = dynamic(() => import("./components/canvas"), {
   ssr: false,
@@ -145,7 +145,7 @@ export default function Home() {
   );
 }
 
-type IconFactory = (props: SVGProps) => JSX.Element;
+type IconFactory = (props: SVGElementProps) => JSX.Element;
 
 function Li({
   text,
