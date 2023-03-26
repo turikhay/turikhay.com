@@ -11,6 +11,7 @@ import {
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
+  WhatsAppIcon,
   YouTubeIcon,
 } from "./components/icons/fontawesome";
 import Loading from "./components/loading";
@@ -52,6 +53,11 @@ export default function Home() {
               icon={DiscordIcon}
             />
             <Li text="Email" url="mailto:me@turikhay.com" icon={EmailIcon} />
+            <Li
+              text="WhatsApp"
+              url="https://wa.me/+79656415489"
+              icon={WhatsAppIcon}
+            />
             <Li
               text="GitHub"
               url="https://github.com/turikhay"
