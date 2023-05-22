@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     firstName: "Artur",
     lastName: "Khusainov",
     username: "turikhay",
-    images: "https://turikhay.com/yuki.jpg",
+    images: "/yuki.jpg",
   },
 };
 
