@@ -24,7 +24,7 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^13.4.2",
+    "@next/bundle-analyzer": "^13.4.3",
     "@types/three": "^0.152.0"
   }
 }
