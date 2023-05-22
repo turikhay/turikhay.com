@@ -18,6 +18,7 @@ import Loading from "./components/loading";
 import Me from "./components/me";
 import styles from "./page.module.css";
 import { SVGElementProps } from "./components/icons/common";
+import { Metadata } from "next";
 
 const Canvas = dynamic(() => import("./components/canvas"), {
   ssr: false,
@@ -26,9 +27,16 @@ const Canvas = dynamic(() => import("./components/canvas"), {
 
 const font = Inter({ subsets: ["latin", "cyrillic"] });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Artur Khusainov (@turikhay)",
   description: `Full stack developer, ${AGE} years old. Personal home page of Artur Khusainov (@turikhay)`,
+  openGraph: {
+    type: "profile",
+    firstName: "Artur",
+    lastName: "Khusainov",
+    username: "turikhay",
+    images: "https://turikhay.com/yuki.jpg",
+  },
 };
 
 export default function Home() {
