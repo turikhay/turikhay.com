@@ -25,6 +25,6 @@
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^13.4.2",
-    "@types/three": "^0.152.0"
+    "@types/three": "^0.152.1"
   }
 }
