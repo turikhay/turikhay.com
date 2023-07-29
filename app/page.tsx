@@ -76,7 +76,7 @@ export default function Home() {
         <div className={`${styles.section}`}>
           <h2>Notable links</h2>
           <ul>
-            <Li text="Я смотрю TikTok" url="https://t.me/s/ya_smotryu_tiktok" />
+            <Li lang="ru" text="Я смотрю TikTok" url="https://t.me/s/ya_smotryu_tiktok" />
           </ul>
         </div>
         <div className={`${styles.section}`}>
@@ -170,11 +170,13 @@ function Li({
   url,
   icon,
   me,
+  lang,
 }: {
   text: string;
   url: string;
   icon?: IconFactory;
   me?: true;
+  lang?: string;
 }) {
   return (
     <li
@@ -193,7 +195,9 @@ function Li({
           ) : (
             <></>
           )}
-          <span className={styles.text}>{text}</span>
+          <span className={styles.text} lang={lang}>
+            {text}
+          </span>
         </>
       </a>
     </li>
