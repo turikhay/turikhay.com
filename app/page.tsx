@@ -119,7 +119,11 @@ export default function Home() {
           <noindex>
             <h2>Attributions</h2>
             <div className={styles.element}>
-              Do you recognize the cat? His name is Maxwell (actually, Jess).{" "}
+              Do you recognize the cat? Her name was Jess. Unfortunately, she{" "}
+              <a href="https://kotaku.com/maxwell-spinning-cat-explain-real-name-jess-garys-mod-1850142446#:~:text=%20jess%20aka%20maxwell%E2%80%99s%20owner%2C%20voidhawk%2C%20has%20sadly%20shared%20the%20news%20with%20kotaku%20that%20the%20famous%20cat%20passed%20away%20in%20early%202020.">
+                passed away in early 2020
+              </a>
+              .{" "}
               <a
                 href="https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0"
                 target="_blank"
