@@ -11,8 +11,8 @@ import {
   TikTokIcon,
   TwitchIcon,
   TwitterIcon,
-  WhatsAppIcon,
   YouTubeIcon,
+  PhoneIcon,
 } from "./components/icons/fontawesome";
 import Loading from "./components/loading";
 import Me from "./components/me";
@@ -62,9 +62,10 @@ export default function Home() {
             />
             <Li text="Email" url="mailto:me@turikhay.com" icon={EmailIcon} />
             <Li
-              text="WhatsApp"
-              url="https://wa.me/+79656415489"
-              icon={WhatsAppIcon}
+              text="Рабочий телефон"
+              lang="ru"
+              url="tel:+79581118237"
+              icon={PhoneIcon}
             />
             <Li
               text="GitHub"
