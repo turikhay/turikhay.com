@@ -190,7 +190,11 @@ function Li({
     <li
       className={`${styles.element} ${styles.flex} ${icon ? styles.logo : ""}`}
     >
-      <a href={url} rel={me ? "me" : undefined} target="_blank">
+      <a
+        href={url}
+        rel={me ? "me" : undefined}
+        target={url.startsWith("http") ? "_blank" : undefined}
+      >
         <>
           {icon ? (
             <>
