@@ -27,7 +27,7 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
       <div className={`${styles.text}`}>
         <Name />
         <div className={styles.subtitle}>
-          aka @turikhay, full stack developer, {AGE} years old
+          aka @turikhay (he/him), full stack developer, {AGE} years old
         </div>
       </div>
     </div>
