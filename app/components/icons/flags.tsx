@@ -21,5 +21,14 @@ export function TatarstanFlag(props: SVGElementProps) {
 }
 
 function FlagIcon(p: SVGIconProps & { region: string }) {
-  return <SVGIcon {...p} props={{ ...p.props, alt: `Flag of ${p.region}` }} />;
+  return (
+    <SVGIcon
+      {...p}
+      props={{
+        alt: `Flag of ${p.region}`,
+        ...p.props,
+        style: { boxShadow: "0 0 5px rgba(0, 0, 0, .25)", ...p.props.style },
+      }}
+    />
+  );
 }
