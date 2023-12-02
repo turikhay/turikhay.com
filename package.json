@@ -20,11 +20,11 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.33.0",
-    "three": "^0.156.0",
+    "three": "^0.159.0",
     "typescript": "^5.2.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^14.0.3",
-    "@types/three": "^0.155.0"
+    "@types/three": "^0.159.0"
   }
 }
