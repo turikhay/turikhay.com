@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: monthly
+    groups:
+      next:
+        patterns:
+          - "next"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
