@@ -10,6 +10,12 @@ updates:
           - "next"
           - "@next/*"
           - "eslint-config-next"
+      react:
+        patterns:
+          - "react"
+          - "react-*"
+          - "@types/react"
+          - "@types/react-*"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
