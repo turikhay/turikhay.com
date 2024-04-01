@@ -16,6 +16,11 @@ updates:
           - "react-*"
           - "@types/react"
           - "@types/react-*"
+      three:
+        patterns:
+          - "three"
+          - "@types/three"
+          - "@react-three/*"
   - package-ecosystem: github-actions
     directory: "/"
     schedule:
