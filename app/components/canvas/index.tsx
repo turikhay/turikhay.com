@@ -7,6 +7,7 @@ import CameraOrbit from "./cameraOrbit";
 import { Quaternion, Vector3 } from "three";
 import CameraZoom from "./cameraZoom";
 import { useMemo } from "react";
+import { ErrorBoundary } from "react-error-boundary";
 
 export default function CanvasWrapper() {
   const position = useMemo(() => {
@@ -21,15 +22,24 @@ export default function CanvasWrapper() {
   const gltf = useLoader(GLTFLoader, "/maxwell/scene.gltf");
 
   return (
-    <Canvas
-      style={{ width: "100%", height: "100%" }}
-      camera={{ position }}
-      resize={{ scroll: false }}
+    <ErrorBoundary
+      fallback={
+        <img
+          src="/maxwell.gif"
+          style={{ width: "100%", height: "100%", objectFit: "scale-down" }}
+        />
+      }
     >
-      <ambientLight color={"white"} intensity={1.4} />
-      <primitive object={gltf.scene} position={new Vector3(0, -8, 0)} />
-      <CameraOrbit position={position} />
-      <CameraZoom />
-    </Canvas>
+      <Canvas
+        style={{ width: "100%", height: "100%" }}
+        camera={{ position }}
+        resize={{ scroll: false }}
+      >
+        <ambientLight color={"white"} intensity={1.4} />
+        <primitive object={gltf.scene} position={new Vector3(0, -8, 0)} />
+        <CameraOrbit position={position} />
+        <CameraZoom />
+      </Canvas>
+    </ErrorBoundary>
   );
 }
