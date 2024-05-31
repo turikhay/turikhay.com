@@ -1,3 +1,3 @@
 <p align="center">
-  <img src="maxwell.gif" alt="Maxwell the Cat" />
+  <img src="public/maxwell.gif" alt="Maxwell the Cat" />
 </p>
