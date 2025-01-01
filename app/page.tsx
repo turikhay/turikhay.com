@@ -19,9 +19,9 @@ import Me from "./components/me";
 import styles from "./page.module.css";
 import { SVGElementProps } from "./components/icons/common";
 import { Metadata } from "next";
+import { ReactElement } from "react";
 
 const Canvas = dynamic(() => import("./components/canvas"), {
-  ssr: false,
   loading: () => <Loading />,
 });
 
@@ -164,7 +164,7 @@ export default function Home() {
   );
 }
 
-type IconFactory = (props: SVGElementProps) => JSX.Element;
+type IconFactory = (props: SVGElementProps) => ReactElement;
 
 function Li({
   text,
