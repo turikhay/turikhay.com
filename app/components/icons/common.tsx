@@ -1,14 +1,14 @@
-import { HTMLProps, SVGAttributes } from "react";
+import { HTMLProps, SVGAttributes, ReactElement } from "react";
 
 type ElementProps = HTMLProps<SVGSVGElement> & SVGAttributes<SVGSVGElement>;
 
 export type SVGElementProps = ElementProps;
 
-export type SVGIconFactory = (props: SVGElementProps) => JSX.Element;
+export type SVGIconFactory = (props: SVGElementProps) => ReactElement;
 
 export type SVGIconProps = {
   viewBox: string;
-  children: JSX.Element | JSX.Element[];
+  children: ReactElement | ReactElement[];
   props: SVGElementProps;
 };
 

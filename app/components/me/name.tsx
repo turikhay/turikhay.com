@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, ReactElement } from "react";
 import { SVGIconFactory } from "../icons/common";
 import { RussianFlag, TatarstanFlag } from "../icons/flags";
 import styles from "./name.module.css";
@@ -10,7 +10,7 @@ type Variant = {
     name: string;
     code: string;
   };
-  name: JSX.Element;
+  name: ReactElement;
   flag?: SVGIconFactory | undefined;
 };
 

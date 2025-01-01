@@ -1,4 +1,5 @@
-import { extend, Object3DNode, useFrame, useThree } from "@react-three/fiber";
+import { extend, useFrame, useThree } from "@react-three/fiber";
+import { type ThreeElement } from "@react-three/fiber";
 import { useRef } from "react";
 import { Vector3 } from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -7,7 +8,7 @@ extend({ OrbitControls });
 
 declare module "@react-three/fiber" {
   interface ThreeElements {
-    orbitControls: Object3DNode<OrbitControls, typeof OrbitControls>;
+    orbitControls: ThreeElement<typeof OrbitControls>;
   }
 }
 
