@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { Inter } from "next/font/google";
 import { AGE } from "./components/me/age";
 import {
@@ -14,21 +13,18 @@ import {
   YouTubeIcon,
   PhoneIcon,
 } from "./components/icons/fontawesome";
-import Loading from "./components/loading";
 import Me from "./components/me";
 import styles from "./page.module.css";
 import { SVGElementProps } from "./components/icons/common";
 import { Metadata } from "next";
 import { ReactElement } from "react";
-
-const Canvas = dynamic(() => import("./components/canvas"), {
-  loading: () => <Loading />,
-});
+import { Canvas } from "./components/canvas";
 
 const font = Inter({ subsets: ["latin", "cyrillic"] });
 
 export const metadata: Metadata = {
   title: "Artur Khusainov (@turikhay)",
+  metadataBase: new URL("https://turikhay.com"),
   description: `Full stack developer, ${AGE} years old. Personal home page of Artur Khusainov (@turikhay)`,
   openGraph: {
     type: "profile",
