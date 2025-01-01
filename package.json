@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/fiber": "^8.17.10",
+    "@react-three/fiber": "^9.0.0-rc.1",
     "@types/node": "^18.19.13",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
