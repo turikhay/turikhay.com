@@ -130,6 +130,6 @@
 
 @media (prefers-color-scheme: dark) {
   .canvasWrapper {
-    background: radial-gradient(#fff1 0%, #fff0 65%);
+    background: radial-gradient(#fff3 0%, #fff0 65%);
   }
 }
