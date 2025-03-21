@@ -16,7 +16,7 @@
     "@vercel/analytics": "^1.5.0",
     "eslint": "^8.57.1",
     "eslint-config-next": "^15.2.1",
-    "next": "^15.2.1",
+    "next": "^15.2.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-error-boundary": "^5.0.0",
