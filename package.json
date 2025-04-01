@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/fiber": "^9.0.4",
+    "@react-three/fiber": "^9.1.1",
     "@types/node": "^18.19.13",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
@@ -21,11 +21,11 @@
     "react-dom": "^19.0.0",
     "react-error-boundary": "^5.0.0",
     "sharp": "^0.33.5",
-    "three": "^0.174.0",
+    "three": "^0.175.0",
     "typescript": "^5.8.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^15.2.1",
-    "@types/three": "^0.174.0"
+    "@types/three": "^0.175.0"
   }
 }
