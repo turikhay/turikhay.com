@@ -83,6 +83,7 @@
 
 @media (max-width: 400px) {
   .me {
+    padding: 0rem;
     flex-direction: column;
   }
 

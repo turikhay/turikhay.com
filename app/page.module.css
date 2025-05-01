@@ -112,9 +112,7 @@
 
 @media (max-width: 700px) {
   .main {
-    --padding-x: 2rem;
-    --padding-y: 2rem;
-    padding: var(--padding-y) var(--padding-x);
+    padding: 2rem;
   }
 
   .column {
@@ -123,6 +121,10 @@
 }
 
 @media (max-width: 400px) {
+  .main {
+    padding: 1rem;
+  }
+
   .canvasWrapper {
     aspect-ratio: 1 / 1 !important;
   }
