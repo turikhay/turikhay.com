@@ -22,7 +22,7 @@
     "react-error-boundary": "^5.0.0",
     "sharp": "^0.33.5",
     "three": "^0.175.0",
-    "typescript": "^5.8.2"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^15.2.4",
