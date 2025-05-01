@@ -23,6 +23,8 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
     >
       <button
         className={`${styles.pfp_button} ${styles.animated}`}
+        title="My profile picture"
+        aria-expanded={expanded}
         onClick={() => {
           setExpanded(!expanded);
           if (ref.current) {
@@ -37,6 +39,7 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
       >
         <Image
           src={photo}
+          aria-hidden={true}
           className={`${styles.pfp} ${styles.animated}`}
           alt={photoAlt}
         />
@@ -44,7 +47,8 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
       <div className={`${styles.text}`} ref={ref}>
         <Name />
         <div className={styles.subtitle}>
-          aka @turikhay (he/him), full stack developer, {AGE} years old
+          <span aria-hidden={true}>aka</span> @turikhay (he/him), full stack
+          developer, {AGE} years old
         </div>
       </div>
     </div>

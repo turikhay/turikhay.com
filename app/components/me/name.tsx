@@ -11,6 +11,7 @@ type Variant = {
     code: string;
   };
   name: ReactElement;
+  nameText: string;
   flag?: SVGIconFactory | undefined;
 };
 
@@ -21,6 +22,7 @@ const VARIANTS: ReadonlyArray<Variant> = [
       code: "en",
     },
     name: <>Ar&shy;tur Khu&shy;sa&shy;inov</>,
+    nameText: "Artur Khusainov",
   },
   {
     lang: {
@@ -28,6 +30,7 @@ const VARIANTS: ReadonlyArray<Variant> = [
       code: "tt",
     },
     name: <>Ар&shy;тур Хө&shy;сә&shy;енов</>,
+    nameText: "Артур Хөсәенов",
     flag: TatarstanFlag,
   },
   {
@@ -36,6 +39,7 @@ const VARIANTS: ReadonlyArray<Variant> = [
       code: "ru",
     },
     name: <>Ар&shy;тур Ху&shy;са&shy;инов</>,
+    nameText: "Артур Хусаинов",
     flag: RussianFlag,
   },
 ] as const;
@@ -51,26 +55,26 @@ export default function Name() {
   });
 
   return (
-    <>
-      <h1
-        className={`${styles.name} ${
-          selectBlocked ? styles.selectBlocked : ""
-        }`}
-        tabIndex={0}
-        role="button"
-        onClick={() => {
-          setIndex(index + 1);
-          setSelectBlocked(true);
-        }}
-        title={`My name in ${variant.lang.name}`}
-      >
-        <span lang={variant.lang.code}>{variant.name}</span>
-        {variant.flag ? (
-          <div className={styles.flag}>{variant.flag({})}</div>
-        ) : (
-          <></>
-        )}
-      </h1>
-    </>
+    <button
+      className={`${styles.button} ${styles.name} ${
+        selectBlocked ? styles.selectBlocked : ""
+      }`}
+      aria-live="assertive"
+      aria-label={`My name in ${variant.lang.name}: ${variant.nameText}. Click to toggle language.`}
+      title={`My name in ${variant.lang.name}: ${variant.nameText}`}
+      onClick={() => {
+        setIndex(index + 1);
+        setSelectBlocked(true);
+      }}
+    >
+      <span lang={variant.lang.code}>{variant.name}</span>
+      {variant.flag ? (
+        <div className={styles.flag} aria-hidden={true}>
+          {variant.flag({})}
+        </div>
+      ) : (
+        <></>
+      )}
+    </button>
   );
 }

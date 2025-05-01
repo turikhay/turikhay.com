@@ -120,7 +120,7 @@ export default function Home() {
           <noindex>
             <h2>Attributions</h2>
             <div className={styles.element}>
-              Do you recognize the cat? Her name was Jess.{" "}
+              Do you recognize the cat on the right? Her name was Jess.{" "}
               <a
                 href="https://sketchfab.com/3d-models/dingus-the-cat-2ca7f3c1957847d6a145fc35de9046b0"
                 target="_blank"

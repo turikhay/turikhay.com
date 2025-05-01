@@ -1,5 +1,12 @@
-.name {
+.button {
+  font-size: 2rem;
+  font-weight: bold;
+  width: 100%;
+  border: none;
+  padding: 0;
   cursor: pointer;
+  background: none;
+  display: inline-flex;
 }
 
 .selectBlocked {
@@ -8,7 +15,7 @@
 
 .flag,
 .flag > svg {
-  height: 0.8em;
+  height: 1.8rem;
 }
 
 .flag {
