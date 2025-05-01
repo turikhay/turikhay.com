@@ -7,7 +7,7 @@
   gap: 2rem;
   align-items: center;
   min-height: 100vh;
-  padding: var(--padding-y) 0;
+  padding: var(--padding-y) var(--padding-x);
 }
 
 .column {
@@ -112,7 +112,8 @@
 
 @media (max-width: 700px) {
   .main {
-    padding: 2rem;
+    --padding-x: 2rem;
+    --padding-y: 2rem;
   }
 
   .column {
@@ -122,7 +123,8 @@
 
 @media (max-width: 400px) {
   .main {
-    padding: 1rem;
+    --padding-x: 1rem;
+    --padding-y: 1rem;
   }
 
   .canvasWrapper {
