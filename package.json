@@ -21,7 +21,7 @@
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-error-boundary": "^5.0.0",
-    "sharp": "^0.34.1",
+    "sharp": "^0.34.2",
     "three": "^0.176.0",
     "typescript": "^5.8.3"
   },
