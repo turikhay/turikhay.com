@@ -20,7 +20,7 @@ export default function CameraOrbit({ position }: { position: Vector3 }) {
     if (delta >= 0.01) {
       // don't keep up when focus is gained after it was lost
       delta = 0;
-    }s
+    }
     ref.current?.update(delta);
   });
 
