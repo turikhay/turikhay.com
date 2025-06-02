@@ -16,8 +16,12 @@ export default function CameraOrbit({ position }: { position: Vector3 }) {
   const { camera, gl } = useThree();
   const ref = useRef<OrbitControls>(null);
 
-  useFrame(() => {
-    ref.current?.update();
+  useFrame((_state, delta) => {
+    if (delta >= 0.01) {
+      // don't keep up when focus is gained after it was lost
+      delta = 0;
+    }s
+    ref.current?.update(delta);
   });
 
   const polarAngle = position.angleTo(new Vector3(0, 1, 0));
