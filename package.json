@@ -22,11 +22,11 @@
     "react-dom": "^19.1.1",
     "react-error-boundary": "^6.0.0",
     "sharp": "^0.34.2",
-    "three": "^0.179.0",
+    "three": "^0.180.0",
     "typescript": "^5.9.2"
   },
   "devDependencies": {
     "@next/bundle-analyzer": "^15.4.5",
-    "@types/three": "^0.178.1"
+    "@types/three": "^0.180.0"
   }
 }
