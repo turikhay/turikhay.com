@@ -16,8 +16,8 @@
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
     "eslint": "^8.57.1",
-    "eslint-config-next": "^15.4.5",
-    "next": "^15.5.2",
+    "eslint-config-next": "^15.5.4",
+    "next": "^15.5.4",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-error-boundary": "^6.0.0",
@@ -26,7 +26,7 @@
     "typescript": "^5.9.2"
   },
   "devDependencies": {
-    "@next/bundle-analyzer": "^15.4.5",
+    "@next/bundle-analyzer": "^15.5.4",
     "@types/three": "^0.178.1"
   }
 }
