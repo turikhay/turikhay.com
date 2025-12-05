@@ -1,19 +1,18 @@
-FROM node:18-alpine
+FROM node:24-alpine
 
-ENV NPM_CONFIG_LOGLEVEL error
+ENV NPM_CONFIG_LOGLEVEL=error
 
-RUN npm install -g pnpm
+WORKDIR /app
 
-COPY package.json pnpm-lock.yaml ./
+COPY package.json package-lock.json ./
 
-RUN pnpm install --frozen-lockfile
+RUN npm ci
 
 COPY . .
 
-RUN pnpm build
+RUN npm run build
 
 EXPOSE 3000
+ENV PORT=3000
 
-ENV PORT 3000
-
-CMD ["pnpm", "start"]
+CMD ["npm", "start"]
