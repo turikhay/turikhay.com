@@ -13,6 +13,7 @@ const photoAlt = "Picture of Artur Khusainov";
 
 export default function Me(props: HTMLProps<HTMLDivElement>) {
   const [expanded, setExpanded] = useState(false);
+  const pfpSize = expanded ? undefined : 64;
   const ref = useRef<HTMLDivElement | null>(null);
   return (
     <div
@@ -39,6 +40,8 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
       >
         <Image
           src={photo}
+          width={pfpSize}
+          height={pfpSize}
           aria-hidden={true}
           className={`${styles.pfp} ${styles.animated}`}
           alt={photoAlt}
