@@ -13,7 +13,8 @@ const photoAlt = "Picture of Artur Khusainov";
 
 export default function Me(props: HTMLProps<HTMLDivElement>) {
   const [expanded, setExpanded] = useState(false);
-  const pfpSize = expanded ? undefined : 64;
+  const [requestedExpandedImage, setRequestedExpandedImage] = useState(false);
+  const [expandedImageLoaded, setExpandedImageLoaded] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
   return (
     <div
@@ -25,12 +26,17 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
       <button
         className={`${styles.pfp_button} ${styles.animated}`}
         title="My profile picture"
+        type="button"
         aria-expanded={expanded}
         onClick={() => {
-          setExpanded(!expanded);
+          const nextExpanded = !expanded;
+          if (nextExpanded && !requestedExpandedImage) {
+            setRequestedExpandedImage(true);
+          }
+          setExpanded(nextExpanded);
           if (ref.current) {
             const classList = ref.current.classList;
-            if (!expanded) {
+            if (nextExpanded) {
               classList.remove(styles.collapsed);
             } else {
               classList.add(styles.collapsed);
@@ -38,14 +44,33 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
           }
         }}
       >
-        <Image
-          src={photo}
-          width={pfpSize}
-          height={pfpSize}
-          aria-hidden={true}
-          className={`${styles.pfp} ${styles.animated}`}
-          alt={photoAlt}
-        />
+        <div
+          className={`${styles.pfp_frame} ${styles.animated}`}
+          style={{ aspectRatio: `${photo.width} / ${photo.height}` }}
+        >
+          <Image
+            src={photo}
+            fill
+            aria-hidden={true}
+            className={styles.pfp}
+            alt={photoAlt}
+            sizes="(max-width: 400px) 50vw, 128px"
+          />
+          {requestedExpandedImage ? (
+            <Image
+              src={photo}
+              fill
+              aria-hidden={true}
+              className={`${styles.pfp} ${styles.pfp_overlay} ${
+                expanded && expandedImageLoaded ? styles.visible : ""
+              }`}
+              alt={photoAlt}
+              loading="eager"
+              onLoad={() => setExpandedImageLoaded(true)}
+              sizes="(max-width: 400px) calc(100vw - 2rem), (max-width: 700px) calc(100vw - 4rem), 34rem"
+            />
+          ) : null}
+        </div>
       </button>
       <div className={`${styles.text}`} ref={ref}>
         <Name />

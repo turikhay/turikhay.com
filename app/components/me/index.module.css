@@ -1,5 +1,10 @@
 .animated {
-  transition: all 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    border-radius 0.3s ease,
+    width 0.3s ease,
+    max-width 0.3s ease,
+    margin 0.3s ease;
 }
 
 .me,
@@ -31,8 +36,14 @@
   cursor: pointer;
   background: none;
   display: inline-flex;
-  transition: all 0.3s ease;
   margin: 0 0.25rem;
+}
+
+.pfp_frame {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 32px;
 }
 
 .me.expanded .pfp_button {
@@ -42,13 +53,20 @@
 }
 
 .pfp {
-  width: 100%;
-  height: auto;
-  border-radius: 32px;
   object-fit: cover;
 }
 
-.me.expanded .pfp {
+.pfp_overlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.pfp_overlay.visible {
+  opacity: 1;
+}
+
+.me.expanded .pfp_frame {
   border-radius: 1rem;
 }
 
@@ -92,7 +110,7 @@
     max-width: 50%;
   }
 
-  .pfp {
+  .pfp_frame {
     border-radius: 50%;
   }
 }
