@@ -54,6 +54,7 @@ export default function Me(props: HTMLProps<HTMLDivElement>) {
             aria-hidden={true}
             className={styles.pfp}
             alt={photoAlt}
+            placeholder="blur"
             sizes="(max-width: 400px) 50vw, 128px"
           />
           {requestedExpandedImage ? (
