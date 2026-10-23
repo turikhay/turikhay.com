@@ -4,7 +4,6 @@ import {
   DiscordIcon,
   EmailIcon,
   GitHubIcon,
-  InstagramIcon,
   MastodonIcon,
   TelegramIcon,
   TikTokIcon,
@@ -98,11 +97,6 @@ export default function Home() {
               text="Mastodon"
               url="https://mas.to/@turikhay"
               icon={MastodonIcon}
-            />
-            <Li
-              text="Instagram"
-              url="https://instagram.com/turikhay"
-              icon={InstagramIcon}
             />
             <Li
               text="TikTok"
