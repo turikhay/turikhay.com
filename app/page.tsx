@@ -70,16 +70,6 @@ export default function Home() {
           </ul>
         </div>
         <div className={`${styles.section}`}>
-          <h2>Notable links</h2>
-          <ul>
-            <Li
-              lang="ru"
-              text="Я смотрю TikTok"
-              url="https://t.me/s/ya_smotryu_tiktok"
-            />
-          </ul>
-        </div>
-        <div className={`${styles.section}`}>
           <h2>Social media</h2>
           <ul>
             <Li
